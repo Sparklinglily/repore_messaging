@@ -88,23 +88,7 @@ class FirebaseService {
         .update({'status': MessageStatus.read.toString()});
   }
 
-  // Group Management
   Stream<QuerySnapshot> getGroups() {
     return _firestore.collection('groups').snapshots();
-  }
-
-  Future<void> cleanupOldMessages(String groupId) async {
-    final cutoffDate = DateTime.now().subtract(Duration(days: 30));
-    final batch = _firestore.batch();
-
-    final oldMessages = await _firestore
-        .collection('groups')
-        .doc(groupId)
-        .collection('messages')
-        .where('timestamp', isLessThan: cutoffDate)
-        .get();
-
-    oldMessages.docs.forEach((doc) => batch.delete(doc.reference));
-    await batch.commit();
   }
 }

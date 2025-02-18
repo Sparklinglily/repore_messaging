@@ -8,7 +8,6 @@ import 'package:promptio/service/firebase_service.dart';
 class ChatProvider with ChangeNotifier {
   final FirebaseService _firebaseService = FirebaseService();
   List<MessageModel> _messages = [];
-  final String? _currentUserId = FirebaseAuth.instance.currentUser?.uid;
 
   String _currentGroupId = '';
 
@@ -56,19 +55,15 @@ class ChatProvider with ChangeNotifier {
         await updateMessageStatus(messageId, MessageStatus.delivered);
 
         print("Generated message ID: $messageId");
-        print("Message after update: ${updatedMessage.toMap()}");
       } else {
         print('Error: Received empty message ID from Firebase.');
       }
     } catch (e) {
       print('Error sending message: $e');
-      print('Error sending message: $e');
       updateMessageStatus(message.id, MessageStatus.resend);
     }
   }
 
-  /// Update message status in Firestore
-  ///
   Future<void> updateMessageStatus(
       String messageId, MessageStatus status) async {
     if (messageId.isEmpty) {
@@ -83,9 +78,9 @@ class ChatProvider with ChangeNotifier {
         _currentGroupId, messageId, status);
   }
 
-  /// Manually resend a failed message
+  /// To manually resend a failed message
   Future<void> resendMessage(MessageModel message) async {
-    updateMessageStatus(message.id, MessageStatus.waiting); // Mark as "waiting"
+    updateMessageStatus(message.id, MessageStatus.waiting);
     await sendMessage(
         message.text,
         UserModel(
