@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "934534916148",
+    "project_id": "com-example-promptio",
+    "storage_bucket": "com-example-promptio.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934534916148:android:53dfdb509d8921fdd68261",
+        "android_client_info": {
+          "package_name": "com.example.promptio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu3Vnu7jZtjugaCicLJkcGr9ZKqwTj_B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
