@@ -38,7 +38,7 @@ Promptio is a real-time chat application built with Flutter and Firebase. It all
 
 ## 📱 App Preview
 
-![App Preview](assets/repore.jpg)
+![App Preview](assets/repore2.jpg)
 
 
 
