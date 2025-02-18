@@ -15,7 +15,7 @@ Promptio is a real-time chat application built with Flutter and Firebase. It all
 - **Firebase**:
   - Firestore (Database)
   - Firebase Authentication (User Auth)
-  
+
 
 ## Setup and Installation
 1. **Clone the repository**
@@ -41,6 +41,4 @@ Promptio is a real-time chat application built with Flutter and Firebase. It all
 ![App Preview](assets/repore.jpg)
 
 
-## License
-This project is licensed under the MIT License.
 

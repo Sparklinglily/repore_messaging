@@ -1,7 +1,7 @@
 // ignore_for_file: use_super_parameters
 
 import 'package:flutter/material.dart';
-import 'package:promptio/core/constants/message_bubble.dart';
+import 'package:promptio/core/constants/app_widget/message_bubble.dart';
 import 'package:promptio/data/message_model.dart';
 import 'package:promptio/presentation/providers/auth_provider.dart';
 import 'package:promptio/presentation/providers/chats_provider.dart';
