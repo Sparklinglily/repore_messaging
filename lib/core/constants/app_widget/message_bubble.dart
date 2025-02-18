@@ -236,6 +236,9 @@ class MessageBubble extends StatelessWidget {
   }
 
   String formatTime(DateTime timestamp) {
-    return "${timestamp.hour}:${timestamp.minute.toString().padLeft(2, '0')}";
+    int hour = timestamp.hour;
+    String period = hour >= 12 ? 'PM' : 'AM';
+    hour = hour % 12 == 0 ? 12 : hour % 12;
+    return "$hour:${timestamp.minute.toString().padLeft(2, '0')} $period";
   }
 }
